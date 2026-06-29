@@ -16,6 +16,31 @@ public class ContainerWithMostWater {
             
         // }
         // return area;
+
+
+
+
+
+
+        // Optimized Approach Two Pointer
+
+        int start=0;
+        int end=height.size()-1;
+        int area=0;
+        while(start<end){
+            int width=end-start;
+            int length=Math.min(height.get(start),height.get(end));
+            area=Math.max(area,length*width);
+            if(height.get(start)<height.get(end)){
+                start++;
+            }else{
+                end--;
+            }
+
+
+        }
+        return area;
+
     }
     public static void main(String args[]){
         ArrayList<Integer> height=new ArrayList<>();
